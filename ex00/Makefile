@@ -8,7 +8,6 @@ OBJ_DIR		=	obj/
 SRC			=	src/
 INCLUDES	=	-I ./includes -MMD -MP
 FILES		= 	$(MAIN)$(EXT) \
-				$(SRC)whatever$(EXT)
 
 
 EXT			=	.cpp
