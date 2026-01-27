@@ -1,5 +1,5 @@
 #include "main.hpp"
-/* 
+
 int main()
 {
 	int a = 2;
@@ -22,9 +22,24 @@ int main()
 	::swap(s1, s2);
 	std::cout << "s1 = \"" << s1 << "\", s2 = \"" << s2 << "\"" << std::endl;
 
-	return 0;
-} */
 
+	a = 5;
+	b = 5;
+
+	std::cout << ::min(a, b) << std::endl;
+	std::cout << ::max(a, b) << std::endl;
+
+
+	const int c = 1;
+	const int d = 2;
+
+	std::cout << min(c, d) << std::endl;
+	std::cout << max(c, d) << std::endl;
+
+
+	return (0);
+}
+/* 
 int main( void ) {
 	int a = 2;
 	int b = 3;
@@ -38,4 +53,4 @@ int main( void ) {
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-}
+} */
