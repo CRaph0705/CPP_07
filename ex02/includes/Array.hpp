@@ -1,9 +1,9 @@
 #pragma once
-
+#include <stdexcept>
 template <typename T>
 class Array {
 	private:
-		int _size;
+		unsigned int _size;
 		T * _data;
 	public:
 		/* • Construction with no parameter: Creates an empty array. */
@@ -33,7 +33,7 @@ class Array {
 				_data = new T[this->_size];
 				for (unsigned int i = 0; i < this->_size; i++)
 				{
-					data[i] = cpy._data[i];
+					_data[i] = cpy._data[i];
 				}
 			}
 		};
@@ -62,4 +62,25 @@ class Array {
 			std::cout << "Array destructor function called" << std::endl;
 			delete[] _data;
 		};
+
+		/* 
+		• Elements can be accessed through the subscript operator: [ ].
+		• When accessing an element with the [ ] operator, if its index is out of bounds, an
+		std::exception is thrown.
+		*/
+		T &operator[](unsigned int i)
+		{
+			if (i >= _size)
+				throw std::out_of_range("Index out of bounds");
+			return (_data[i]);
+		}
+
+		/* 
+		• A member function size() that returns the number of elements in the array. This
+		member function takes no parameters and must not modify the current instance.
+		*/
+		unsigned int size() const
+		{
+			return (_size);
+		}
 } ;
