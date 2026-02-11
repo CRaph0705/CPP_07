@@ -1,7 +1,8 @@
 #pragma once
 #include <stdexcept>
 template <typename T>
-class Array {
+class Array 
+{
 	private:
 		unsigned int _size;
 		T * _data;
